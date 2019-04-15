@@ -4,14 +4,11 @@ import './App.css';
 import fetch from 'isomorphic-fetch'
 import runtimeEnv from '@mars/heroku-js-runtime-env'
 
-class App extends Component {
 
-  constructor() {
-    super()
-    this.state = {
+class App extends Component {
+    state = {
       data: ""
     }
-  }
 
   componentDidMount() {
     const url = runtimeEnv().REACT_APP_API_URL
@@ -21,7 +18,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.data)
     return (
       <p>Data recieved from API: { this.state.data }</p>
     );
